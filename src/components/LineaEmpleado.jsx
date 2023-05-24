@@ -1,21 +1,21 @@
 import { Card, Button, Container, Row, Col } from "react-bootstrap"
 
-const LineaEmpleado = () => {
+const LineaEmpleado = ({empleado}) => {
     return (
         <div className="lineaEmpleado">
             <Card>
                 <Container>
                     <Row>
                         <Col xs={3}>
-                            <Card.Img className="avatar" src="https://w7.pngwing.com/pngs/1008/377/png-transparent-computer-icons-avatar-user-profile-avatar-heroes-black-hair-computer.png" />
+                            <Card.Img src={empleado.pic} />
                         </Col>
                         <Col xs={6}>
                             <Card.Body>
                                 <br></br>
-                                <Card.Title className="fs-2">Nombre del Empleado</Card.Title>
+                                <Card.Title className="fs-2">{empleado.fullName}</Card.Title>
                                 <br></br>
                                 <Card.Text className="fs-4">
-                                    Cargo del empleado en la empresa  <span className="btn btn-info text-light"> Sector </span>
+                                    {empleado.title}  <span className="btn btn-info text-light"> {empleado.department} </span>
                                 </Card.Text>
                             </Card.Body>
                         </Col>
